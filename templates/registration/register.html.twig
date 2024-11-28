@@ -1,0 +1,32 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Créer un compte{% endblock %}
+
+{% block body %}
+    <div id="layoutSidenav_content">
+        <main>
+            <div class="container-fluid px-4">
+                <h1 class="mt-4">Créer un compte</h1>
+                <ol class="breadcrumb mb-4">
+                    <li class="breadcrumb-item"><a href="index.html">Compte</a></li>
+                    <li class="breadcrumb-item active">Créer</li>
+                </ol>
+                <div class="card mb-4">
+                    <div class="card-body">
+                        {{ form_start(registrationForm) }}
+                            {{ form_row(registrationForm.email) }}
+                            {{ form_row(registrationForm.plainPassword, {
+                                label: 'Mots de passe'
+                            }) }}
+                            {{ form_row(registrationForm.agreeTerms) }}
+
+                            <button type="submit" class="btn btn-primary mt-5">Créer le compte</button>
+                        {{ form_end(registrationForm) }}
+                        </div>
+                    </div>
+                </div>
+                {{ form_errors(registrationForm) }}
+            </main>
+        </div>
+    </div>
+{% endblock %}

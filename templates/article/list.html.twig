@@ -22,7 +22,9 @@
                             {% for article in articles %}
                                 <div class="col-md-4 mb-4">
                                     <div class="card">
-                                    
+                                        {% if article.image %}
+                                        <img src="{{ asset('uploads/' ~ article.image) }}" class="card-img-top" style="max-height:200px" alt="image de {{ article.titre }}">
+                                        {% endif %}
                                         <div class="card-body">
                                             <h5 class="card-title">{{ article.titre }} ({{ article.id}})</h5>
                                             <p class="card-text">{{ article.texte }}</p>
